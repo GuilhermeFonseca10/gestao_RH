@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="row" style="padding-left: 130px;" >
+   <div class="col-sm" >
+
+   Seja bem vindo
+   <!--{% for todo in todos %}
+      <h1>Nome: {{todo.nome}}</h1>
+   {%endfor%} -->
+</div>
+<div class="col-sm">
+   One of three columns
+</div>
+<div class="col-sm">
+<a href="{% url 'logout' %}">Logout</a>
+</div>
+</div>
+{% endblock %}
