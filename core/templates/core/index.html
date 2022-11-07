@@ -4,16 +4,38 @@
 <div class="row" style="padding-left: 130px;" >
    <div class="col-sm" >
 
-   Seja bem vindo
-   <!--{% for todo in todos %}
-      <h1>Nome: {{todo.nome}}</h1>
-   {%endfor%} -->
+   <h5>Seja bem vindo</h5>
+   <p>Ordenado por nome:</p>
+   {% for todo in todos %}
+      <ul>
+        <li> Nome: {{todo.nome}}</li>
+      </ul>
+   {%endfor%}
 </div>
 <div class="col-sm">
-   One of three columns
+   <h6>Olá, {{ usuario.funcionario.nome }}.</h6>
+   <p>Contem Silva:</p>
+   {%for tem in contem %}
+      <ul>
+            <li>Contem: {{tem.nome}}</li>
+      </ul>
+   {%endfor%}
+      
 </div>
 <div class="col-sm">
-<a href="{% url 'logout' %}">Logout</a>
+
+{% if usuario.funcionario.empresa %}
+   <a href="">Editar empresa</a>
+{% else %}
+   <a href="">Criar empresa</a>
+{%endif%}
+<h6><a href="{% url 'logout' %}">Sair</a></h6>
+<p>Funcionario por id:</p>
+{% for r in empresa %}
+   <ul>
+      <li>Nome: {{r.nome}}</li>
+   </ul>
+{%endfor%}
 </div>
 </div>
 {% endblock %}
