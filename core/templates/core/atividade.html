@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <div class="row" style="padding-left: 130px;" >
+        <div class="col-sm" >
+   
+    <p>Ordenado por nome:</p>
+    {% for todo in todos %}
+       <ul>
+         <li> Nome: {{todo.nome}}</li>
+       </ul>
+    {%endfor%}
+    </div>
+    <div class="col-sm">
+        <p>Contem Silva:</p>
+        {%for tem in contem %}
+           <ul>
+                 <li>Contem: {{tem.nome}}</li>
+           </ul>
+        {%endfor%}
+
+     </div>
+     <div class="col-sm">
+        <p>Funcionario por id:</p>
+{% for r in empresa %}
+   <ul>
+      <li>Nome: {{r.nome}}</li>
+   </ul>
+{%endfor%}
+     </div>
+        </div>
+    
+
+{%endblock%}

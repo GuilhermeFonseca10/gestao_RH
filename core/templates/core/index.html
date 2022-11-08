@@ -5,37 +5,19 @@
    <div class="col-sm" >
 
    <h5>Seja bem vindo</h5>
-   <p>Ordenado por nome:</p>
-   {% for todo in todos %}
-      <ul>
-        <li> Nome: {{todo.nome}}</li>
-      </ul>
-   {%endfor%}
+
 </div>
 <div class="col-sm">
-   <h6>Olá, {{ usuario.funcionario.nome }}.</h6>
-   <p>Contem Silva:</p>
-   {%for tem in contem %}
-      <ul>
-            <li>Contem: {{tem.nome}}</li>
-      </ul>
-   {%endfor%}
-      
+   <h6>Olá, {{ usuario.funcionario.nome }}.</h6>     
 </div>
 <div class="col-sm">
 
-{% if usuario.funcionario.empresa %}
-   <a href="">Editar empresa</a>
-{% else %}
-   <a href="">Criar empresa</a>
-{%endif%}
-<h6><a href="{% url 'logout' %}">Sair</a></h6>
-<p>Funcionario por id:</p>
-{% for r in empresa %}
-   <ul>
-      <li>Nome: {{r.nome}}</li>
-   </ul>
-{%endfor%}
+      {% if usuario.funcionario.empresa %}
+         <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar empresa</a>
+      {% else %}
+         <a href="{% url 'create_empresa' %}">Criar empresa</a>
+      {%endif%}
+   <h6><a href="{% url 'logout' %}">Sair</a></h6>
 </div>
 </div>
 {% endblock %}
