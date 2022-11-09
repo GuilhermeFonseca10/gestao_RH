@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<div class="row" style="padding-left: 130px;" >
+<div class="row" >
    <div class="col-sm" >
 
    <h5>Seja bem vindo</h5>
 
 </div>
 <div class="col-sm">
-   <h6>Olá, {{ usuario.funcionario.nome }}.</h6>     
+   <h6>Olá, {{ usuario.funcionario.nome }}.</h6>  
+   <a href="{% url 'list_funcionarios' %}">Gerenciar funcionarios</a>   
 </div>
 <div class="col-sm">
 
