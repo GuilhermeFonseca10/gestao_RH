@@ -6,5 +6,6 @@ from Funcionarios.models import Funcionario
 class FuncionarioViewSet(ModelViewSet):
 
     queryset = Funcionario.objects.all()
+    
     serializer_class = FuncionarioSerializer
 
